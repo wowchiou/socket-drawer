@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+@import './assets/sass/reset';
+@import './assets/sass/main';
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+
+  @include media(wide) {
+    font-size: 100%; // 1rem = 16px
+  }
+  @include media(laptop) {
+    font-size: 56.25%; // 1rem = 9px
+  }
+  @include media(tablet) {
+    font-size: 50%; // 1rem = 8px
+  }
+  @include media(phone) {
+    font-size: 37.5%; // 1rem = 6px
+  }
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: getFontWeight(regular);
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: getFontWeight(black);
+}
+
+h2 {
+  font-weight: getFontWeight(bold);
+}
