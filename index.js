@@ -124,11 +124,11 @@ const createComponentFolder = async ({ name, scope }) => {
         path: `${componentFolder}\\${componentName}.js`,
         getContent: () => getComponentContent(componentName),
       },
-      sass: {
+      sass_module: {
         path: `${componentFolder}\\${componentName}.module.scss`,
         getContent: () => getComponentStyleContent(componentName),
       },
-      story: {
+      storybook: {
         path: `${componentFolder}\\${componentName}.stories.js`,
         getContent: () => getComponentStoryContent(componentName, scope),
       },
