@@ -27,7 +27,7 @@ const questions = [
 ];
 
 // 獲取index.js模板
-const getComponentIndexContent = (componentName) => {
+const getIndexContent = (componentName) => {
   try {
     const data = fs.readFileSync('./template/component/index.js', 'utf8');
     return data.toString().replace(/COMPONENT_NAME/g, componentName);
@@ -52,7 +52,7 @@ const getComponentContent = (componentName) => {
 };
 
 // 獲取scss模板
-const getComponentStyleContent = (componentName) => {
+const getSassContent = (componentName) => {
   try {
     const data = fs.readFileSync(
       './template/component/component.module.scss',
@@ -67,7 +67,7 @@ const getComponentStyleContent = (componentName) => {
 };
 
 // 獲取storybook模板
-const getComponentStoryContent = (componentName, scopeName) => {
+const getStorybookContent = (componentName, scopeName) => {
   try {
     const data = fs.readFileSync(
       './template/component/component.stories.js',
@@ -118,7 +118,7 @@ const createComponentFolder = async ({ name, scope }) => {
     const files = {
       index: {
         path: `${componentFolder}\\index.js`,
-        getContent: () => getComponentIndexContent(componentName),
+        getContent: () => getIndexContent(componentName),
       },
       component: {
         path: `${componentFolder}\\${componentName}.js`,
@@ -126,11 +126,11 @@ const createComponentFolder = async ({ name, scope }) => {
       },
       sass_module: {
         path: `${componentFolder}\\${componentName}.module.scss`,
-        getContent: () => getComponentStyleContent(componentName),
+        getContent: () => getSassContent(componentName),
       },
       storybook: {
         path: `${componentFolder}\\${componentName}.stories.js`,
-        getContent: () => getComponentStoryContent(componentName, scope),
+        getContent: () => getStorybookContent(componentName, scope),
       },
     };
 
