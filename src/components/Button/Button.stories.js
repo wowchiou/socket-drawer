@@ -6,7 +6,9 @@ export default {
   components: Button,
 };
 
-const Template = (args) => <Button {...args}>測試按鈕</Button>;
+const Template = (args) => <Button {...args} />;
 
 export const primary = Template.bind({});
-primary.args = {};
+primary.args = {
+  children: '測試按鈕',
+};
