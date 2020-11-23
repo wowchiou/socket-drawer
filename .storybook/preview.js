@@ -1,4 +1,5 @@
 import React from 'react';
+import '../src/index.scss';
 import { MemoryRouter } from 'react-router-dom';
 
 export const parameters = {
